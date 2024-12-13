@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Sans Regular";
+  src: local("NotoSans-Regular"),
+    url("./assets/fonts/NotoSans-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Sans Bold";
+  src: local("NotoSans-Bold"),
+    url("./assets/fonts/NotoSans-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "NotoSerif Regular";
+  src: local("NotoSerif-Regular"),
+    url("./assets/fonts/NotoSerif-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "NotoSerif Bold";
+  src: local("NotoSerif-Bold"),
+    url("./assets/fonts/NotoSerif-Bold.ttf") format("truetype");
+}
