@@ -16,12 +16,14 @@ const AboutMe = () => {
           <div className="flex w-[50%]">
             <div className="min-h-full w-1 rounded bg-primaryOrange-0 me-4"></div>
             <p className="font-primaryRegular w-[90%] text-sm py-3 ">
-              I am an Information Systems student at Brawijaya University with a
-              focus on front-end web development. Mastering HTML, CSS, and
-              React.Js, I am passionate about creating engaging and responsive
-              user interfaces. In addition to technical abilities, I also have
-              experience working in a team as well as solid problem-solving
-              skills.
+              I am a undergraduate Student of Information System Study, Faculty
+              of Computer Science, University of Brawijaya, who has expertise in
+              front end website development. Has expertise in HTML, CSS,
+              React.js, etc to create attractive and responsive user interfaces.
+              In addition to technical skills, also has experience working in a
+              team, leadership skills, initiative, and solid problem-solving
+              skills. Always learning and adapting to new technologies and
+              focusing on career development in the professional field.
             </p>
           </div>
         </div>
