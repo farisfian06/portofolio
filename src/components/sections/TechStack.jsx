@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaBootstrap } from "react-icons/fa";
 import { SiFramer } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
@@ -26,48 +26,74 @@ const icons = [
 ];
 
 const TechStack = () => {
+  const FAST_DURATION = 25;
+  const SLOW_DURATION = 55;
+
   const [refLeft, { width: widthLeft }] = useMeasure();
   const [refRight, { width: widthRight }] = useMeasure();
 
   const xTranslationLeft = useMotionValue(0);
   const xTranslationRight = useMotionValue(0);
 
-  // Animasi untuk marquee ke kiri
-  useEffect(() => {
-    let controlsLeft;
-    const finalPositionLeft = -widthLeft / 2 - 8;
-
-    controlsLeft = animate(xTranslationLeft, [0, finalPositionLeft], {
+  const animateMarquee = (motionValue, start, end, duration) => {
+    return animate(motionValue, [start, end], {
       ease: "linear",
-      duration: 25,
+      duration: duration,
       repeat: Infinity,
       repeatType: "loop",
-      repeatDelay: 0,
     });
+  };
 
-    return controlsLeft.stop;
+  useEffect(() => {
+    if (widthLeft === 0) return;
+
+    const finalPositionLeft = -widthLeft / 2 - 8;
+    const controlsLeft = animateMarquee(
+      xTranslationLeft,
+      0,
+      finalPositionLeft,
+      FAST_DURATION
+    );
+
+    return () => controlsLeft.stop();
   }, [xTranslationLeft, widthLeft]);
 
-  // Animasi untuk marquee ke kanan
   useEffect(() => {
-    let controlsRight;
-    const finalPositionRight = widthRight / 2 + 8;
+    if (widthRight === 0) return;
 
-    controlsRight = animate(xTranslationRight, [0, finalPositionRight], {
+    const finalPositionRight = widthRight / 2 + 8;
+    const controlsRight = animateMarquee(
+      xTranslationRight,
+      0,
+      finalPositionRight,
+      FAST_DURATION
+    );
+
+    return () => controlsRight.stop();
+  }, [xTranslationRight, widthRight]);
+
+  const handleHover = (motionValue, width, setDuration, isSlow) => {
+    const finalPosition =
+      motionValue === xTranslationLeft ? -width / 2 - 8 : width / 2 + 8;
+    const currentPosition = motionValue.get();
+    const progress = Math.abs(currentPosition / finalPosition);
+    const remainingDuration =
+      (isSlow ? SLOW_DURATION : FAST_DURATION) * (1 - progress);
+
+    animate(motionValue, [currentPosition, finalPosition], {
       ease: "linear",
-      duration: 25,
+      duration: remainingDuration,
       repeat: Infinity,
       repeatType: "loop",
-      repeatDelay: 0,
     });
 
-    return controlsRight.stop;
-  }, [xTranslationRight, widthRight]);
+    setDuration(isSlow ? SLOW_DURATION : FAST_DURATION);
+  };
 
   return (
     <section>
       <div className="container">
-        <h2 className="font-primaryBold text-[4svh]">Tech Stack</h2>
+        <h2 className="font-primaryBold text-3xl">Tech Stack</h2>
 
         {/* Marquee ke kiri */}
         <div className="max-w-md mx-auto overflow-hidden h-fit">
@@ -75,6 +101,12 @@ const TechStack = () => {
             ref={refLeft}
             className="h-28 flex gap-4 relative w-max"
             style={{ x: xTranslationLeft }}
+            onHoverStart={() =>
+              handleHover(xTranslationLeft, widthLeft, () => {}, true)
+            }
+            onHoverEnd={() =>
+              handleHover(xTranslationLeft, widthLeft, () => {}, false)
+            }
           >
             {[...icons, ...icons].map((item, index) => (
               <TechCard key={index} nama={item.nama}>
@@ -85,11 +117,17 @@ const TechStack = () => {
         </div>
 
         {/* Marquee ke kanan */}
-        <div className="max-w-md mx-auto overflow-hidden h-fit mt-8 flex justify-end ">
+        <div className="max-w-md mx-auto overflow-hidden h-fit mt-8 flex justify-end">
           <motion.div
             ref={refRight}
             className="h-28 flex gap-4 relative w-max"
             style={{ x: xTranslationRight }}
+            onHoverStart={() =>
+              handleHover(xTranslationRight, widthRight, () => {}, true)
+            }
+            onHoverEnd={() =>
+              handleHover(xTranslationRight, widthRight, () => {}, false)
+            }
           >
             {[...icons, ...icons].map((item, index) => (
               <TechCard key={index} nama={item.nama}>
