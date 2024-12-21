@@ -23,7 +23,7 @@ const experiences = [
 ];
 
 const Experiences = () => {
-  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const [progressStates, setProgressStates] = useState(
     Array(experiences.length).fill(0) // Progress setiap card mulai dari 0%
@@ -56,7 +56,7 @@ const Experiences = () => {
     <section>
       <div className="container">
         <h2 className="font-primaryBold text-3xl text-slate-50">Experiences</h2>
-        <div className="flex items-stretch">
+        <div className="flex items-stretch mt-8">
           {experiences.map((item, index) => (
             <ExprienceCard
               tanggal={item.tanggal}
@@ -68,7 +68,11 @@ const Experiences = () => {
             />
           ))}
         </div>
-        <GitHubCalendar username="farisfian06" />
+        <div className="flex w-full justify-center mt-12">
+          <div className="p-8 w-full sm:w-fit bg-primaryBlack-0 rounded-lg shadow-[0_0_15px_5px] shadow-primaryOrange-0">
+            <GitHubCalendar username="farisfian06" />
+          </div>
+        </div>
       </div>
     </section>
   );
