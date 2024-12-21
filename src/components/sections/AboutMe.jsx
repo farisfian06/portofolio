@@ -4,18 +4,17 @@ const AboutMe = () => {
   return (
     <section className="relative z-10 bg-primaryBlack-0 py-11">
       <div className="container">
-        <div className="flex justify-between w-full items-center">
-          <div className="w-[50%]">
-            <h2 className="font-primaryBold text-[4svh] text-primaryOrange-0">
+        <div className="flex flex-col sm:flex-row sm:justify-between w-full sm:items-center">
+          <div className="sm:w-[50%]">
+            <h2 className="font-primaryBold text-3xl text-primaryOrange-0">
               ABOUT ME
             </h2>
-            <h2 className="font-SerifRegular text-[5svh]">
-              FARIS IHSAN ALIFIAN
-            </h2>
+            <h2 className="font-SerifRegular text-4xl">FARIS IHSAN ALIFIAN</h2>
           </div>
-          <div className="flex w-[50%]">
-            <div className="min-h-full w-1 rounded bg-primaryOrange-0 me-4"></div>
-            <p className="font-primaryRegular w-[90%] text-sm py-3 ">
+          <div className="flex sm:w-[50%] flex-col sm:flex-row h-full sm:h-auto">
+            <div className="h-1 self-end w-[80%] rounded bg-primaryOrange-0 mt-4 sm:hidden"></div>
+            <div className="min-h-full w-1 rounded bg-primaryOrange-0 me-4 hidden sm:block"></div>
+            <p className="font-primaryRegular w-full text-justify sm:w-[90%] text-base sm:text-sm py-3 mt-2">
               I am a undergraduate Student of Information System Study, Faculty
               of Computer Science, University of Brawijaya, who has expertise in
               front end website development. Has expertise in HTML, CSS,
