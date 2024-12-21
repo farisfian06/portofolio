@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ExprienceCard from "../ExprienceCard";
+import GitHubCalendar from "react-github-calendar";
 
-const dumy = [
+const experiences = [
   {
     tanggal: "FEB 2024 - JUNE 2024",
     keterangan: "Advanced Programming Practicum Assistant",
@@ -25,7 +26,7 @@ const Experiences = () => {
   const [selectedIndex, setSelectedIndex] = useState(null);
 
   const [progressStates, setProgressStates] = useState(
-    Array(dumy.length).fill(0) // Progress setiap card mulai dari 0%
+    Array(experiences.length).fill(0) // Progress setiap card mulai dari 0%
   );
 
   const handleCardClick = (index) => {
@@ -54,11 +55,9 @@ const Experiences = () => {
   return (
     <section>
       <div className="container">
-        <h2 className="font-primaryBold text-[4svh] text-slate-50">
-          Experiences
-        </h2>
+        <h2 className="font-primaryBold text-3xl text-slate-50">Experiences</h2>
         <div className="flex items-stretch">
-          {dumy.map((item, index) => (
+          {experiences.map((item, index) => (
             <ExprienceCard
               tanggal={item.tanggal}
               keterangan={item.keterangan}
@@ -69,6 +68,7 @@ const Experiences = () => {
             />
           ))}
         </div>
+        <GitHubCalendar username="farisfian06" />
       </div>
     </section>
   );
