@@ -53,7 +53,7 @@ const listProject = [
     domain: "github.com/farisfian06/Project-2-pemweb-laravel",
     img: [hrfTrans, hrfTrans2, hrfTrans3],
     keterangan:
-      "Website to rent a vehicle online, with feature like sign in, and rent a car",
+      "Website to rent a vehicle online, with feature like sign in, and rent a car, which implementing CRUD to local database",
   },
   {
     id: 4,
@@ -86,31 +86,33 @@ const Project = () => {
     target: ref,
   });
 
-  const scroll = useTransform(scrollYProgress, [0.2, 1], ["12%", "-73%"]);
+  const scroll = useTransform(scrollYProgress, [0.2, 1], ["1%", "-85%"]);
   const [activeProject, setActiveProject] = useState(null);
   return (
     <section>
       <div className="container">
-        <div ref={ref} className="h-[300vh] relative">
-          <div className="sticky top-0 h-screen overflow-hidden flex flex-col py-6">
+        <div ref={ref} className="h-[300vh] mt-8 relative">
+          <div className="sticky top-0 h-screen overflow-hidden flex flex-col py-8">
             <h2 className="font-primaryBold text-3xl">Projects</h2>
-            <motion.div
-              style={{
-                x: scroll,
-              }}
-              className="grid grid-flow-col w-auto-cols-auto w-[400vw] sm:w-[200vw] min-h-[50%] items-center justify-center gap-2 sm:gap-36"
-            >
-              {listProject.map((item) => (
-                <ProjectCard
-                  key={item.id}
-                  prjImg={item.img[0]}
-                  judul={item.judul}
-                  keterangan={item.keterangan}
-                  onInView={() => setActiveProject(item)}
-                />
-              ))}
-            </motion.div>
-            <div className=" max-w-md self-center h-full">
+            <div className="flex min-h-[50%]">
+              <motion.div
+                style={{
+                  x: scroll,
+                }}
+                className="grid grid-flow-col mx-[2%] sm:mx-[26%] w-auto-cols-auto min-w-[400vw] sm:min-w-[200vw] min-h-[50%] items-center justify-center sm:gap-20"
+              >
+                {listProject.map((item) => (
+                  <ProjectCard
+                    key={item.id}
+                    prjImg={item.img[0]}
+                    judul={item.judul}
+                    keterangan={item.keterangan}
+                    onInView={() => setActiveProject(item)}
+                  />
+                ))}
+              </motion.div>
+            </div>
+            <div className="w-full sm:max-w-md self-center h-full sm:max-h-[50%]">
               {activeProject && (
                 <div className="mockup-browser border-base-300 border-4 h-fit bg-slate-400">
                   <div className="mockup-browser-toolbar">
