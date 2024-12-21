@@ -1,0 +1,20 @@
+:root {
+  --swiper-navigation-size: 20px; /* Ganti ukuran sesuai kebutuhan */
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  z-index: 10; /* Pastikan tombol berada di atas elemen lain */
+  color: #f36135; /* Berikan warna agar terlihat */
+  background-color: #1b1b1b;
+  padding: 10px;
+  border-radius: 100%;
+}
+
+.swiper {
+  position: relative; /* Pastikan Swiper memiliki konteks posisi */
+}
+
+.swiper-pagination-bullet-active {
+  background: #f36135;
+}
