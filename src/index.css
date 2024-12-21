@@ -22,3 +22,25 @@
   src: local("NotoSerif-Bold"),
     url("./assets/fonts/NotoSerif-Bold.ttf") format("truetype");
 }
+
+html {
+  font-size: 65%;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 100%;
+  }
+}
