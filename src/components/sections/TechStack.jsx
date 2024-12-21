@@ -92,14 +92,14 @@ const TechStack = () => {
 
   return (
     <section>
-      <div className="container">
+      <div className="container pb-8">
         <h2 className="font-primaryBold text-3xl">Tech Stack</h2>
 
         {/* Marquee ke kiri */}
-        <div className="max-w-md mx-auto overflow-hidden h-fit">
+        <div className="max-w-md mx-auto mt-10 overflow-hidden h-fit">
           <motion.div
             ref={refLeft}
-            className="h-28 flex gap-4 relative w-max"
+            className="sm:h-28 flex gap-4 relative w-max"
             style={{ x: xTranslationLeft }}
             onHoverStart={() =>
               handleHover(xTranslationLeft, widthLeft, () => {}, true)
@@ -120,7 +120,7 @@ const TechStack = () => {
         <div className="max-w-md mx-auto overflow-hidden h-fit mt-8 flex justify-end">
           <motion.div
             ref={refRight}
-            className="h-28 flex gap-4 relative w-max"
+            className="sm:h-28 flex gap-4 relative w-max"
             style={{ x: xTranslationRight }}
             onHoverStart={() =>
               handleHover(xTranslationRight, widthRight, () => {}, true)
