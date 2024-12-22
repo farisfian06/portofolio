@@ -21,7 +21,7 @@ const AboutMe = () => {
           <motion.div
             initial={{ x: 40, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ margin: "-400px", once: true }}
+            viewport={{ margin: "-200px", once: true }}
             transition={{ duration: 0.4 }}
             className="flex sm:w-[50%] flex-col sm:flex-row h-full sm:h-auto"
           >
