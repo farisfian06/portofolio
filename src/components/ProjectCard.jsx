@@ -13,7 +13,7 @@ const ProjectCard = ({ prjImg, keterangan, judul, onInView }) => {
   return (
     <div
       ref={ref}
-      className={`bg-gray-800 w-full sm:w-[90%] h-fit rounded-3xl overflow-hidden transform transition-transform duration-300 group ${
+      className={`bg-primaryBlack-0 w-full sm:w-[90%] h-fit rounded-3xl overflow-hidden transform transition-transform duration-300 group ${
         isInView ? "" : "scale-75"
       }`}
     >
@@ -22,9 +22,9 @@ const ProjectCard = ({ prjImg, keterangan, judul, onInView }) => {
         src={prjImg}
         alt="Project image"
       />
-      <div className="px-8 py-4 relative bg-gray-800">
-        <h3 className="text-primaryOrange-0 font-primaryRegular">{judul}</h3>
-        <p>{keterangan}</p>
+      <div className="px-8 py-4 relative bg-gradient-to-t from-gray-700 to-primaryBlack-0">
+        <h3 className="text-primaryOrange-0 font-primaryBold">{judul}</h3>
+        <p className="text-gray-300 font-primaryRegular">{keterangan}</p>
       </div>
     </div>
   );
