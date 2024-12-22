@@ -11,17 +11,19 @@ import { ReactLenis } from "lenis/dist/lenis-react";
 const LandingPage = () => {
   return (
     <>
+      <Navbar />
       <ReactLenis root>
-        <Navbar />
         <HeroSection />
-        <main>
-          <AboutMe />
-          <Experiences />
-          <Project />
-          <TechStack />
-        </main>
-        <Footer />
       </ReactLenis>
+      <main>
+        <AboutMe />
+        <Experiences />
+        <ReactLenis root>
+          <Project />
+        </ReactLenis>
+        <TechStack />
+      </main>
+      <Footer />
     </>
   );
 };
