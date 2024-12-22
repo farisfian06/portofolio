@@ -20,6 +20,8 @@ import kelanaKampus3 from "../../assets/project/kelanaKampus 3.png";
 import kelanaKampus4 from "../../assets/project/kelanaKampus 4.png";
 import kelanaKampus5 from "../../assets/project/kelanaKampus 5.png";
 import kelanaKampus6 from "../../assets/project/kelanaKampus 6.png";
+import readMate from "../../assets/project/readMate.png";
+import readMate2 from "../../assets/project/readMate 2.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules"; // Import Navigation
@@ -74,7 +76,7 @@ const listProject = [
     id: 5,
     judul: "Read Mate",
     domain: "",
-    img: [],
+    img: [readMate, readMate2],
     keterangan:
       "Mobile apps for reading article, with a feature like bookmarking and reading history. This app is integrated with firebase database",
   },
@@ -89,7 +91,7 @@ const Project = () => {
   const scroll = useTransform(scrollYProgress, [0.2, 1], ["1%", "-85%"]);
   const [activeProject, setActiveProject] = useState(null);
   return (
-    <section>
+    <section id="project">
       <div className="container">
         <div ref={ref} className="h-[300vh] mt-8 relative">
           <div className="sticky top-0 h-screen overflow-hidden flex flex-col py-8">
