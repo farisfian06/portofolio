@@ -10,7 +10,7 @@ const ExprienceCard = ({
   return (
     <button
       onClick={onClick}
-      className={`grow w-2 flex flex-col items-center  text-black group transition-all duration-300 py-8 ${
+      className={`w-full flex flex-col items-center  text-black group transition-all duration-300 py-8 ${
         isSelected ? "bg-primaryOrange-0" : "bg-primaryBlack-0"
       }`}
     >
