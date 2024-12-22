@@ -91,7 +91,7 @@ const TechStack = () => {
   };
 
   return (
-    <section>
+    <section id="tech">
       <div className="container pb-8">
         <h2 className="font-primaryBold text-3xl">Tech Stack</h2>
 
