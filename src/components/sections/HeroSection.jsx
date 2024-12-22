@@ -21,6 +21,14 @@ const HeroSection = () => {
     ["skewY(-8deg) ", "skewY(8deg) "]
   );
 
+  const x1 = useTransform(scrollYProgress, [0.2, 0.4], ["0%", "30%"]);
+  const x2 = useTransform(scrollYProgress, [0.5, 0.7], ["0%", "-30%"]);
+  const x3 = useTransform(scrollYProgress, [0.8, 1], ["0%", "30%"]);
+
+  const op = useTransform(scrollYProgress, [0.2, 0.4], [1, 0]);
+  const op2 = useTransform(scrollYProgress, [0.5, 0.7], [1, 0]);
+  const op3 = useTransform(scrollYProgress, [0.8, 1], [1, 0]);
+
   const y = useTransform(scrollYProgress, [0, 1], ["20%", "0%"]);
 
   const gradient = useTransform(
@@ -37,7 +45,7 @@ const HeroSection = () => {
       <div className="container relative h-fit">
         <div ref={targetRef} className="h-[200vh]">
           <div className="flex h-screen flex-col sm:flex-row gap-8 sm:gap-12 sticky justify-center sm:justify-start items-center top-0 w-full">
-            <div className="relative h-1/3 sm:h-[80%] sm:w-1/3">
+            <div className="relative h-1/3 sm:h-[80%] sm:w-1/3 z-20">
               <div className="overflow-hidden h-full flex justify-center">
                 <motion.img
                   src={profileImg}
@@ -59,6 +67,7 @@ const HeroSection = () => {
                 whileInView={{ y: [100, 0], opacity: [0, 1] }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: easeOut }}
+                style={{ x: x1, opacity: op }}
                 className="text-left font-primaryRegular tracking-wide leading-tight p-0 font-[600] text-[5rem]"
               >
                 HELLO, MY <br />
@@ -68,6 +77,7 @@ const HeroSection = () => {
                 whileInView={{ x: [100, 0], opacity: [0, 1] }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, ease: easeOut, delay: 0.5 }}
+                style={{ x: x2, opacity: op2 }}
                 className="flex"
               >
                 <h1 className="bg-primaryOrange-0 font-SerifRegular leading-none w-fit tracking-normal font-normal text-primaryBlack-0 text-[5rem]">
@@ -81,6 +91,7 @@ const HeroSection = () => {
                 whileInView={{ y: [100, 0], opacity: [0, 1] }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: easeOut }}
+                style={{ x: x3, opacity: op3 }}
                 className="text-left font-primaryRegular tracking-wide leading-tight p-0 font-[600] text-[5rem]"
               >
                 FRONT END <br />
@@ -90,6 +101,7 @@ const HeroSection = () => {
                 whileInView={{ y: [100, 0], opacity: [0, 1] }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: easeIn }}
+                style={{ x: x3, opacity: op3 }}
                 className="leading-none text-right font-primaryRegular text-lg "
               >
                 INDONESIA, MALANG
