@@ -13,7 +13,7 @@ const AboutMe = () => {
             transition={{ duration: 0.4 }}
             className="sm:w-[50%]"
           >
-            <h2 className="font-primaryBold text-3xl text-primaryOrange-  0">
+            <h2 className="font-primaryBold text-3xl text-primaryOrange-~0">
               ABOUT ME
             </h2>
             <h2 className="font-SerifRegular text-4xl">FARIS IHSAN ALIFIAN</h2>
