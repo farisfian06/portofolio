@@ -44,7 +44,7 @@ const HeroSection = () => {
     <header>
       <div className="container relative h-fit">
         <div ref={targetRef} className="h-[200vh]">
-          <div className="flex h-screen flex-col sm:flex-row gap-8 sm:gap-12 sticky justify-center sm:justify-start items-center top-0 w-full">
+          <div className="flex h-screen flex-col sm:flex-row gap-8 sm:gap-12 sticky justify-center sm:justify-start items-center top-0 w-full overflow-hidden">
             <div className="relative h-1/3 sm:h-[80%] sm:w-1/3 z-20">
               <div className="overflow-hidden h-full flex justify-center">
                 <motion.img
