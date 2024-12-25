@@ -8,7 +8,7 @@ import { animate, motion, useMotionValue } from "framer-motion";
 
 const icons = [
   { icon: <FaReact className="flex-shrink-0" size={100} />, nama: "React" },
-  { icon: <FaHtml5 className="flex-shrink-0" size={100} />, nama: "HTML" },
+  { icon: <FaHtml5 className="flex-shrink-0 " size={100} />, nama: "HTML" },
   { icon: <FaCss3Alt className="flex-shrink-0" size={100} />, nama: "CSS" },
   { icon: <FaJs className="flex-shrink-0" size={100} />, nama: "JavaScript" },
   {
@@ -92,7 +92,7 @@ const TechStack = () => {
 
   return (
     <section id="tech">
-      <div className="container pb-8">
+      <div className="container py-8">
         <h2 className="font-primaryBold text-3xl">Tech Stack</h2>
 
         {/* Marquee ke kiri */}
