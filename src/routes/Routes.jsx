@@ -7,10 +7,6 @@ import Coba from "../pages/Coba";
 
 const createRouter = createBrowserRouter([
   {
-    path: "/coba",
-    element: <Coba />,
-  },
-  {
     path: "/",
     element: <LandingPage />,
   },
