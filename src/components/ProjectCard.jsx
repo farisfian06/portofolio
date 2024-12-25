@@ -7,7 +7,7 @@ const ProjectCard = ({ prjImg, keterangan, judul, onInView }) => {
 
   useEffect(() => {
     if (isInView) {
-      onInView(); // Panggil fungsi jika kartu in view
+      onInView();
     }
   }, [isInView, onInView]);
   return (
