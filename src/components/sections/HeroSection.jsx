@@ -41,7 +41,7 @@ const HeroSection = () => {
   );
 
   return (
-    <header>
+    <header id="hero">
       <div className="container relative h-fit">
         <div ref={targetRef} className="h-[200vh]">
           <div className="flex h-screen flex-col sm:flex-row gap-8 sm:gap-12 sticky justify-center sm:justify-start items-center top-0 w-full overflow-hidden">
