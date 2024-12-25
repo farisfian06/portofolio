@@ -131,8 +131,8 @@ const Project = () => {
                   <div className="border-base-300 flex relative justify-center border-t-4">
                     <Swiper
                       pagination={{ dynamicBullets: true }}
-                      navigation={true} // Enable navigation
-                      modules={[Pagination, Navigation]} // Include Navigation module
+                      navigation={true}
+                      modules={[Pagination, Navigation]}
                       className="w-full h-full bg-slate-500"
                     >
                       {activeProject.img.map((image, index) => (
